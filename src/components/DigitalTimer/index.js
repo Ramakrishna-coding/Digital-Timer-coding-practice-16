@@ -24,18 +24,26 @@ class DigitalTimer extends Component {
 
   tick = () => {
     const {timeInSeconds, timeInMinutes, isRunningTime} = this.state
-    if (timeInSeconds === 0 && timeInMinutes !== 0) {
-      this.setState({
-        timeInSeconds: 60,
-        timeInMinutes: timeInMinutes - 1,
-        isRunningTime: !isRunningTime,
-      })
-    } else if (timeInSeconds === 0 && timeInMinutes === 0) {
-      this.setState({timeInSeconds: 0, timeInMinutes: 0})
+    if (isRunningTime) {
+      if (timeInSeconds === 0 && timeInMinutes !== 0) {
+        this.setState({
+          timeInSeconds: 59,
+          timeInMinutes: timeInMinutes - 1,
+          isRunningTime: true,
+        })
+      } else if (timeInSeconds === 0 && timeInMinutes === 0) {
+        this.setState({
+          timeInSeconds: 0,
+          timeInMinutes: 0,
+          isRunningTime: false,
+        })
+      }
+      if (timeInMinutes === 0 && timeInSeconds !== 0) {
+        this.setState({
+          timeInSeconds: timeInSeconds - 1,
+        })
+      }
     }
-    this.setState(prevState => ({
-      timeInSeconds: prevState.timeInSeconds - 1,
-    }))
   }
 
   toggleStartButton = () => {
@@ -53,7 +61,7 @@ class DigitalTimer extends Component {
 
   decreaseCountButton = () => {
     const {timeInMinutes} = this.state
-    this.setState({timeInMinutes: timeInMinutes - 1})
+    this.setState({timeInMinutes: timeInMinutes > 0 ? timeInMinutes - 1 : 0})
   }
 
   increaseCountButton = () => {
@@ -122,7 +130,7 @@ class DigitalTimer extends Component {
               <button
                 className="change-time-count"
                 type="button"
-                onClick={isRunningTime && !this.decreaseCountButton}
+                onClick={!isRunningTime && this.decreaseCountButton}
               >
                 -
               </button>
@@ -130,7 +138,7 @@ class DigitalTimer extends Component {
               <button
                 className="change-time-count"
                 type="button"
-                onClick={isRunningTime && !this.increaseCountButton}
+                onClick={!isRunningTime && this.increaseCountButton}
               >
                 +
               </button>
