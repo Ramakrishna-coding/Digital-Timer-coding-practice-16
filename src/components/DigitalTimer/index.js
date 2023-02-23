@@ -38,7 +38,7 @@ class DigitalTimer extends Component {
           isRunningTime: false,
         })
       }
-      if (timeInMinutes === 0 && timeInSeconds !== 0) {
+      if ((timeInMinutes !== 0 || timeInMinutes === 0) && timeInSeconds !== 0) {
         this.setState({
           timeInSeconds: timeInSeconds - 1,
         })
@@ -90,9 +90,9 @@ class DigitalTimer extends Component {
         <div className="box">
           <div className="bg-img">
             <div className="bg-white">
-              <h1 className="time">
+              <h2 className="time">
                 {`${stringifiedMinutes}:${stringifiedSeconds}`}
-              </h1>
+              </h2>
               <p className="is-running">
                 {isRunningTime ? 'Running' : 'Paused'}
               </p>
