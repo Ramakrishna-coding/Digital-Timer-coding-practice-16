@@ -1,0 +1,129 @@
+.bg-container {
+  background-image: linear-gradient(to right, #ffffff, #cffcf1);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 16px 0px #dfdfdf;
+}
+.heading {
+  color: #0f172a;
+  font-family: 'Roboto';
+  font-size: 40px;
+}
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+}
+.bg-img {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
+  height: 700px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-position: center;
+}
+.bg-white {
+  background-color: #defafe;
+  height: 160px;
+  width: 160px;
+  border-radius: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.time {
+  color: #00d9f5;
+  font-size: 35px;
+  font-family: 'Roboto';
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+.is-running {
+  color: #1e293b;
+  font-size: 20px;
+  font-family: 'Roboto';
+  margin: 0px;
+  padding: 0;
+  font-weight: bold;
+}
+.time-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start-reset-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  margin: 0;
+}
+.item-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+.button-img {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+}
+.start-reset {
+  color: #1e293b;
+  font-size: 30px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin-top: -5px;
+  padding: 0;
+}
+.limit-text {
+  color: #1e293b;
+  font-size: 17px;
+  font-family: 'Roboto';
+  margin: 0;
+}
+.time-limit-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 150px;
+}
+.change-time-count {
+  color: #0f172a;
+  font-size: 38px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.time-count {
+  background-color: #40e0d0;
+  padding: 10px 25px;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
